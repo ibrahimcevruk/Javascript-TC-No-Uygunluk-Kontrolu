@@ -1,4 +1,4 @@
-* Javascript İle TC No Uygunluk Kontrolü
+# Javascript İle TC No Uygunluk Kontrolü
 
 Javascript ile TC Kimlik numarasının doğru olup olmadığını kontrol edebilirsiniz.
 
