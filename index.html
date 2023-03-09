@@ -1,0 +1,47 @@
+<script>
+function TCKimlikIslem(tcKimlikNo){
+    tcKimlikNo = parseInt(tcKimlikNo);
+    var islenecek1, islenecek2;
+    var hane1, hane2, hane3, hane4, hane5, hane6, hane7, hane8, hane9;
+    var islem1, islem2;
+    var result = false;
+    if (tcKimlikNo.toString().length == 11) {
+        islenecek1 = parseInt(tcKimlikNo / 100);
+        islenecek2 = parseInt(tcKimlikNo / 100);
+        hane1 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane2 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane3 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane4 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane5 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane6 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane7 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane8 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        hane9 = parseInt(islenecek1 % 10);
+        islenecek1 = parseInt(islenecek1 / 10);
+        islem1 = parseInt((10 - ((((hane1 + hane3 + hane5 + hane7 + hane9) * 3) + (hane2 + hane4 + hane6 + hane8)) % 10)) % 10);
+        islem2 = parseInt((10 - (((((hane2 + hane4 + hane6 + hane8) + islem1) * 3) + (hane1 + hane3 + hane5 + hane7 + hane9)) % 10)) % 10);
+        if ((islenecek2 * 100) + (islem1 * 10) + islem2 == tcKimlikNo) {
+            result = true;
+        }
+    }
+    return result;
+}
+
+function TCKimlikKontrol(tcKimlikNo){
+    var result = false;
+    if (TCKimlikIslem(tcKimlikNo)){
+        result = true;
+    }
+    return result;
+}
+
+console.log( TCKimlikKontrol("11111111111") );
+</script>
